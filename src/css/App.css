@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* @font-face {
+  font-family: "TheJamsil";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+} */
+
+:root {
+  --mw1: 1440px;
+  --mw2: 1200px;
+}
+
+.App {
+  font-family: "TheJamsil";
+  font-weight: 300;
+}
+
+.mw1 {
+  max-width: var(--mw1);
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+
+/* Intro(sec1) 영역 */
+.sec1 {
+  /* border: 1px solid red; */
+  display: flex;
+}
+.sec1 > * {
+  /* border: 1px solid blue; */
+}
+
+.sec1 h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin: 2rem auto;
+}
+
+.sec1 .sec1_left,
+.sec1 .sec1_right {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.sec1 .sec1_left img,
+.sec1 .sec1_right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.sec1 .introbox {
+  /* border: 1px solid yellow; */
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  width: 80%;
+  text-align: center;
+  z-index: 10;
+}
+.sec1 .introbox:hover + img {
+  transform: scale(1.1);
+}
+.sec1 .introbox > * {
+  margin-top: 1.5rem;
+}
+.sec1 .introbox > p:first-of-type {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.sec1 .btn_intro {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: white;
+  font-family: "TheJamsil";
+  font-weight: 300;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+.sec1 .btn_intro:hover {
+  background-color: #a463ae;
+  border: 1px solid #a463ae;
+}
+
+/* header 영역 */
+.hd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+}
+.hd {
+  border: 1px solid red;
+  background-image: url(/public/img/sec2_bg.jpg);
+}
+.hd .hd_logo img {
+  border: 1px solid blue;
+  margin-top: 2rem;
+}
+
+/* Facility 영역 */
+.breadcrumb {
+  border: 1px solid green;
+  position: absolute;
+  top: 180px;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.breadcrumb > * {
+  padding: 1rem 0.5rem;
+  color: white;
+  font-size: 1.5rem;
+}
+.breadcrumb > a:last-of-type {
+  font-weight: 400;
+}
+
+.facility_table {
+  border: 1px solid hotpink;
+  width: 100%;
+}
+.facility_table th {
+  border: 1px solid yellow;
+  width: 150px;
+  /* max-width: 200px; */
+}
+.facility_table th:nth-of-type(3) {
+  background-color: aqua;
+  width: calc(100% - 600px);
+  /* min-width: 300px; */
+}

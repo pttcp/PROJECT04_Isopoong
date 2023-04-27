@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/pages/Pgtest.jsx
+/src/pages/Pagination.jsx
 
 # testing
 /coverage
