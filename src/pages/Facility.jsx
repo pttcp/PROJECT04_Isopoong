@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,18 +6,9 @@ import { Pagination } from "react-bootstrap";
 
 import Header from "./Header";
 import KidsTable from "./KidsTable";
-import MyPg from "./Pgtest";
 
 function Facility() {
   let dataset = useSelector((state) => state);
-  // let daejeon = useSelector((state) => state.daejeon);
-  // let sejong = useSelector((state) => state.sejong);
-  // let chungbuk = useSelector((state) => state.chungbuk);
-  // let chungnam = useSelector((state) => state.chungnam);
-  // let chung4 = [...daejeon, ...sejong, ...chungbuk, ...chungnam];
-  // let jeon3 = useSelector((state) => state.jeon3);
-
-  // console.log(chung4);
 
   let [tab, setTab] = useState(0);
 
@@ -112,8 +102,6 @@ function Facility() {
         </Nav>
 
         <TabContents tab={tab} dataset={dataset} />
-
-        <MyPg />
       </section>
     </section>
   );

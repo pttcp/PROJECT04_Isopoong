@@ -28,7 +28,7 @@ function KidsTable({ local }) {
           </tr>
         </thead>
         <tbody>
-          {currentData.map((item, i) => {
+          {local.map((item, i) => {
             return (
               <tr key={i}>
                 <td className="fac_local">{item["시도 명칭"]}</td>
@@ -41,13 +41,6 @@ function KidsTable({ local }) {
           })}
         </tbody>
       </table>
-
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={local.length}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
 
       {local.length}
 
