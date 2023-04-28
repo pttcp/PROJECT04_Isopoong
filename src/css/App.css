@@ -11,7 +11,7 @@
 :root {
   --mw1: 1440px;
   --mw2: 1200px;
-  --color-bg: #fef5fa;
+  --color-bg: #fcf8fa;
   --color-btn1: #efd2e0;
   --color-btn2: #a463ae;
   --color-point1: #f58cbd;
@@ -25,6 +25,11 @@
 
 .mw1 {
   max-width: var(--mw1);
+  width: calc(100% - 2rem);
+  margin: auto;
+}
+.mw2 {
+  max-width: var(--mw2);
   width: calc(100% - 2rem);
   margin: auto;
 }
@@ -108,9 +113,6 @@
   flex-direction: column;
   align-items: center;
   height: 180px;
-}
-.hd {
-  /* border: 1px solid red; */
   background-image: url(/public/img/sec2_bg.jpg);
   margin-bottom: 1rem;
 }
@@ -169,19 +171,79 @@
 
 /* KidsTable(표) 영역 */
 .KidsTable {
-  border: 2px solid red;
+  /* border: 2px solid red; */
+  /* display: flex; */
 }
+
+.KidsTable .lnb {
+  /* border: 1px solid blueviolet; */
+}
+
 .facility_table {
-  border: 1px solid hotpink;
+  /* border: 1px solid hotpink; */
   width: 100%;
 }
 .facility_table th {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   width: 150px;
   /* max-width: 200px; */
+  padding: 0.5rem;
+  text-align: center;
+  font-weight: 400;
+  color: var(--color-point2);
+  border-top: 1px solid var(--color-point2);
+  border-bottom: 1px solid var(--color-point2);
+  /* margin: 1rem 0; */
 }
 .facility_table th:nth-of-type(3) {
-  background-color: aqua;
+  /* background-color: aqua; */
   width: calc(100% - 600px);
   /* min-width: 300px; */
+  /* max-width: 500px; */
+}
+
+.facility_table td {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* Detail 영역 */
+.detail h2 {
+  font-size: 3rem;
+  color: var(--color-point1);
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+.detail .place {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+.detail .place > * {
+  /* border: 1px solid blue; */
+}
+
+.detail .place_map {
+  width: 50%;
+  max-width: 500px;
+  background-color: #eaeaea;
+}
+.detail .place_desc {
+  width: 50%;
+}
+.place_desc > p {
+  border-bottom: 1px solid #d9d9d9;
+  margin-left: 2rem;
+}
+.place_desc > p > span {
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+.place_desc > p > span:first-of-type {
+  /* border: 1px solid lightgreen; */
+  width: 30%;
+  font-weight: 400;
 }

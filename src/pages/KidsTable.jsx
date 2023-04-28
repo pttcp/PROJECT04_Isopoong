@@ -9,7 +9,7 @@ function KidsTable({ local, tab }) {
   let [newlist, setNewlist] = useState([]);
   // pg 추가
   let [currentPage, setCurrentPage] = useState(1);
-  let [itemsPerPage] = useState(20);
+  let [itemsPerPage] = useState(10);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -32,11 +32,11 @@ function KidsTable({ local, tab }) {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentData = newlist.slice(indexOfFirstItem, indexOfLastItem);
 
-  console.log(currentData);
+  // console.log(currentData);
 
   return (
     <section className="KidsTable">
-      <nav>
+      <nav className="lnb">
         <button
           onClick={() => {
             filterList("전체");
@@ -85,7 +85,6 @@ function KidsTable({ local, tab }) {
         </thead>
         <tbody>
           {currentData.map((item) => {
-            // const eachId = item["시설명"];
             return (
               <tr key={item.시설명}>
                 <td className="fac_local">{item["시도 명칭"]}</td>

@@ -5,12 +5,8 @@ import "./css/App.css";
 import Intro from "./pages/Intro";
 import Facility from "./pages/Facility";
 import Detail from "./pages/Detail";
-import { useSelector } from "react-redux";
 
 function App() {
-  // let dataset = useSelector((state) => state);
-  // console.log(dataset);
-
   return (
     <div className="App">
       <Routes>

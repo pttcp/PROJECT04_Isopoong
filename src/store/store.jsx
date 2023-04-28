@@ -65,6 +65,30 @@ let gyeongsang5 = createSlice({
   initialState: gyeongsang5List,
 });
 
+let allLocalList = [
+  ...gangwonList,
+  ...jejuList,
+  ...seoulList,
+  ...daejeonList,
+  ...sejongList,
+  ...chungbukList,
+  ...chungnamList,
+  ...gyeonggiList,
+  ...incheonList,
+  ...gwangjuList,
+  ...jeonbukList,
+  ...jeonnamList,
+  ...busanList,
+  ...daeguList,
+  ...gyeongbukList,
+  ...gyeongnamList,
+  ...ulsanList,
+];
+let allLocal = createSlice({
+  name: "allLocal",
+  initialState: allLocalList,
+});
+
 export default configureStore({
   reducer: {
     gangwon: gangwon.reducer,
@@ -74,5 +98,6 @@ export default configureStore({
     jeon3: jeon3.reducer,
     gyeongsang5: gyeongsang5.reducer,
     chung4: chung4.reducer,
+    allLocal: allLocal.reducer,
   },
 });
