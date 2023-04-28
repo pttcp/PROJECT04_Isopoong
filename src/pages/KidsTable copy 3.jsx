@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Detail from "./Detail";
 
 import Pagination from "./Pagination";
 
 function KidsTable({ local, tab }) {
-  let [newlist, setNewlist] = useState([]);
   // pg 추가
   let [currentPage, setCurrentPage] = useState(1);
   let [itemsPerPage] = useState(20);
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentData = local.slice(indexOfFirstItem, indexOfLastItem);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -18,56 +19,54 @@ function KidsTable({ local, tab }) {
   useEffect(() => {
     setCurrentPage(1);
   }, [tab]);
+
+  // sorting
+  // console.log(local);
+  let [newlist, setNewlist] = useState(local);
   useEffect(() => {
-    filterList("전체");
+    setNewlist(local);
   }, [local]);
-
-  function filterList(category) {
-    if (category === "전체") {
-      setNewlist(local);
-    } else setNewlist(local.filter((a) => a.카테고리2 === category));
-  }
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentData = newlist.slice(indexOfFirstItem, indexOfLastItem);
-
-  console.log(currentData);
+  console.log(newlist);
+  let gallery = local.filter((a) => a.카테고리2 === "전시/기념관");
+  let movie = local.filter((a) => a.카테고리2 === "영화/연극/공연");
+  let tour = local.filter((a) => a.카테고리2 === "관광지");
+  let famous = local.filter((a) => a.카테고리2 === "명승지");
+  // console.log(famous);
 
   return (
-    <section className="KidsTable">
+    <>
       <nav>
         <button
           onClick={() => {
-            filterList("전체");
+            setNewlist(local);
           }}
         >
           전체
         </button>
         <button
           onClick={() => {
-            filterList("전시/기념관");
+            setNewlist(gallery);
           }}
         >
           전시/기념관
         </button>
         <button
           onClick={() => {
-            filterList("영화/연극/공연");
+            setNewlist(movie);
           }}
         >
           영화/연극/공연
         </button>
         <button
           onClick={() => {
-            filterList("관광지");
+            setNewlist(tour);
           }}
         >
           관광지
         </button>
         <button
           onClick={() => {
-            filterList("명승지");
+            setNewlist(famous);
           }}
         >
           명승지
@@ -84,14 +83,11 @@ function KidsTable({ local, tab }) {
           </tr>
         </thead>
         <tbody>
-          {currentData.map((item) => {
-            // const eachId = item["시설명"];
+          {currentData.map((item, i) => {
             return (
-              <tr key={item.시설명}>
+              <tr key={i}>
                 <td className="fac_local">{item["시도 명칭"]}</td>
-                <td className="fac_name">
-                  <Link to={`/Detail/${item.시설명}`}>{item["시설명"]}</Link>
-                </td>
+                <td className="fac_name">{item["시설명"]}</td>
                 <td className="fac_address">{item["도로명주소"]}</td>
                 <td className="fac_phone">{item["전화번호"]}</td>
                 <td className="fac_kids">{item["키즈존 여부"]}</td>
@@ -100,14 +96,16 @@ function KidsTable({ local, tab }) {
           })}
         </tbody>
       </table>
+
       <Pagination
         itemsPerPage={itemsPerPage}
-        totalItems={newlist.length}
+        totalItems={local.length}
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
-      {local.length} / {newlist.length} / {currentData.length}
-    </section>
+
+      {local.length}
+    </>
   );
 }
 

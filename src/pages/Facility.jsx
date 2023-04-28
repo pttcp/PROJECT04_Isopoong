@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Nav } from "react-bootstrap";
 import { Pagination } from "react-bootstrap";
 
 import Header from "./Header";
 import KidsTable from "./KidsTable";
+import Detail from "./Detail";
 
 function Facility() {
   let dataset = useSelector((state) => state);
@@ -28,7 +29,7 @@ function Facility() {
         </h2>
         <p>전국 유아 동반 가능 문화시설을 찾아 볼 수 있습니다.</p>
 
-        <Nav variant="pills" defaultActiveKey="link-0">
+        <Nav variant="pills" defaultActiveKey="link-0" className="fac_nav">
           <Nav.Item>
             <Nav.Link
               eventKey="link-0"
@@ -102,6 +103,10 @@ function Facility() {
         </Nav>
 
         <TabContents tab={tab} dataset={dataset} />
+
+        {/* <Routes>
+          <Route path="/Detail/:id" element={<Detail dataset={dataset} />} />
+        </Routes> */}
       </section>
     </section>
   );
@@ -109,13 +114,13 @@ function Facility() {
 
 function TabContents({ tab, dataset }) {
   return [
-    <KidsTable local={dataset.seoul} />,
-    <KidsTable local={dataset.gyeonggi2} />,
-    <KidsTable local={dataset.gangwon} />,
-    <KidsTable local={dataset.chung4} />,
-    <KidsTable local={dataset.jeon3} />,
-    <KidsTable local={dataset.gyeongsang5} />,
-    <KidsTable local={dataset.jeju} />,
+    <KidsTable tab={tab} local={dataset.seoul} />,
+    <KidsTable tab={tab} local={dataset.gyeonggi2} />,
+    <KidsTable tab={tab} local={dataset.gangwon} />,
+    <KidsTable tab={tab} local={dataset.chung4} />,
+    <KidsTable tab={tab} local={dataset.jeon3} />,
+    <KidsTable tab={tab} local={dataset.gyeongsang5} />,
+    <KidsTable tab={tab} local={dataset.jeju} />,
   ][tab];
 }
 

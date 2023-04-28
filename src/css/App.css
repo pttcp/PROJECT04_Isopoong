@@ -11,6 +11,11 @@
 :root {
   --mw1: 1440px;
   --mw2: 1200px;
+  --color-bg: #fef5fa;
+  --color-btn1: #efd2e0;
+  --color-btn2: #a463ae;
+  --color-point1: #f58cbd;
+  --color-point2: #17485c;
 }
 
 .App {
@@ -93,8 +98,8 @@
   transition: 0.3s;
 }
 .sec1 .btn_intro:hover {
-  background-color: #a463ae;
-  border: 1px solid #a463ae;
+  background-color: var(--color-btn2);
+  border: 1px solid var(--color-btn2);
 }
 
 /* header 영역 */
@@ -105,17 +110,22 @@
   height: 180px;
 }
 .hd {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-image: url(/public/img/sec2_bg.jpg);
+  margin-bottom: 1rem;
 }
 .hd .hd_logo img {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-top: 2rem;
 }
 
 /* Facility 영역 */
+.facility {
+  background-color: var(--color-bg);
+}
+
 .breadcrumb {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   position: absolute;
   top: 180px;
   left: 50%;
@@ -130,6 +140,37 @@
   font-weight: 400;
 }
 
+.facility h2 {
+  font-size: 3rem;
+  color: var(--color-point1);
+  padding: 1rem 0;
+}
+.facility h2 strong {
+  font-weight: 400;
+}
+
+.facility .sec2 > p {
+  font-size: 20px;
+  color: var(--color-point2);
+  font-weight: 400;
+  /* padding: 1rem 0; */
+}
+
+.facility .fac_nav {
+  /* border: 1px solid black; */
+  background-color: var(--color-btn1);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* KidsTable(표) 영역 */
+.KidsTable {
+  border: 2px solid red;
+}
 .facility_table {
   border: 1px solid hotpink;
   width: 100%;
