@@ -288,3 +288,13 @@ body {
   width: 30%;
   font-weight: 400;
 }
+
+/* Review(이용후기) 영역 */
+.review h2 {
+  font-size: 3rem;
+  color: var(--color-point1);
+  padding: 1rem 0;
+}
+.review h2 strong {
+  font-weight: 400;
+}
