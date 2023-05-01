@@ -5,7 +5,7 @@ function Intro() {
     <section className="sec1">
       <h1>
         <Link to="/">
-          <img src="/img/logo.svg" alt="logo" />
+          <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="logo" />
         </Link>
       </h1>
       <div className="sec1_left">
@@ -16,17 +16,17 @@ function Intro() {
             시설소개 바로가기 &#8640;
           </Link>
         </div>
-        <img src="/img/sec1_bg1.jpg" alt="bg1" />
+        <img src={`${process.env.PUBLIC_URL}/img/sec1_bg1.jpg`} alt="bg1" />
       </div>
       <div className="sec1_right">
         <div className="introbox">
           <p>방문후기</p>
           <p>문화시설에 대한 다양한 방문 후기를 보실 수 있습니다.</p>
-          <Link to="/" className="btn_intro">
+          <Link to="/Review" className="btn_intro">
             방문후기 바로가기 &#8640;
           </Link>
         </div>
-        <img src="/img/sec1_bg2.jpg" alt="bg2" />
+        <img src={`${process.env.PUBLIC_URL}/img/sec1_bg2.jpg`} alt="bg2" />
       </div>
     </section>
   );

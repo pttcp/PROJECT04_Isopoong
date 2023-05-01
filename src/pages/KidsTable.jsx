@@ -73,39 +73,42 @@ function KidsTable({ local, tab }) {
           명승지
         </button>
       </nav>
-      <table className="facility_table">
-        <thead>
-          <tr>
-            <th>지역</th>
-            <th>시설명</th>
-            <th>주소</th>
-            <th>전화번호</th>
-            <th>유아동반 가능 여부</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentData.map((item) => {
-            return (
-              <tr key={item.시설명}>
-                <td className="fac_local">{item["시도 명칭"]}</td>
-                <td className="fac_name">
-                  <Link to={`/Detail/${item.시설명}`}>{item["시설명"]}</Link>
-                </td>
-                <td className="fac_address">{item["도로명주소"]}</td>
-                <td className="fac_phone">{item["전화번호"]}</td>
-                <td className="fac_kids">{item["키즈존 여부"]}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <Pagination
-        itemsPerPage={itemsPerPage}
-        totalItems={newlist.length}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
-      {local.length} / {newlist.length} / {currentData.length}
+      <div className="tableset">
+        <table className="facility_table">
+          <thead>
+            <tr>
+              <th>지역</th>
+              <th>시설명</th>
+              <th>주소</th>
+              <th>전화번호</th>
+              <th>유아동반 가능 여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentData.map((item) => {
+              return (
+                <tr key={item.시설명}>
+                  <td className="fac_local">{item["시도 명칭"]}</td>
+                  <td className="fac_name">
+                    {item["시설명"]}
+                    <Link to={`/Detail/${item.시설명}`}></Link>
+                  </td>
+                  <td className="fac_address">{item["도로명주소"]}</td>
+                  <td className="fac_phone">{item["전화번호"]}</td>
+                  <td className="fac_kids">{item["키즈존 여부"]}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <Pagination
+          itemsPerPage={itemsPerPage}
+          totalItems={newlist.length}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
+      </div>
+      {/* {local.length} / {newlist.length} / {currentData.length} */}
     </section>
   );
 }

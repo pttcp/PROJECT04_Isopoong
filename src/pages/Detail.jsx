@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Header from "./Header";
+import KakaoMap from "./map";
 
 function Detail() {
   let allLocal = useSelector((state) => state.allLocal);
@@ -34,12 +35,13 @@ function Detail() {
         <i className="fa-solid fa-angles-right"></i>
         <Link to="/Facility">시설소개</Link>
       </div>
-      {/* <div>디테일페이지야</div> */}
 
       <section className="sec_detail mw2">
         <h2>{detailItem["시설명"]}</h2>
         <div className="place">
-          <div className="place_map">지도영역</div>
+          <div className="place_map">
+            <KakaoMap detailItem={detailItem} />
+          </div>
           <div className="place_desc">
             <p>
               <span>시설유형</span>
