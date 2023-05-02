@@ -17,6 +17,8 @@ import sejongList from "./sejong";
 import seoulList from "./seoul";
 import ulsanList from "./ulsan";
 
+import reviewDataList from "./reviewDataList";
+
 let gangwon = createSlice({
   name: "gangwon",
   initialState: gangwonList,
@@ -89,6 +91,11 @@ let allLocal = createSlice({
   initialState: allLocalList,
 });
 
+let reviewData = createSlice({
+  name: "reviewData",
+  initialState: reviewDataList,
+});
+
 export default configureStore({
   reducer: {
     gangwon: gangwon.reducer,
@@ -99,5 +106,6 @@ export default configureStore({
     gyeongsang5: gyeongsang5.reducer,
     chung4: chung4.reducer,
     allLocal: allLocal.reducer,
+    reviewData: reviewData.reducer,
   },
 });

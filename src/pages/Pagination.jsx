@@ -30,7 +30,7 @@ const Pagination = ({
           disabled={currentPage === 1}
           onClick={() => handlePageChange(1)}
         >
-          맨 앞으로
+          <i className="fa-solid fa-angles-left"></i>
         </button>
       </li>
     );
@@ -43,7 +43,7 @@ const Pagination = ({
           disabled={currentPage === 1}
           onClick={() => handlePageChange(firstPage - 1)}
         >
-          이전 10개
+          <i className="fa-solid fa-chevron-left"></i>
         </button>
       </li>
     );
@@ -72,7 +72,7 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(lastPage + 1)}
         >
-          다음 10개
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </li>
     );
@@ -85,7 +85,7 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(totalPages)}
         >
-          맨 뒤로
+          <i className="fa-solid fa-angles-right"></i>
         </button>
       </li>
     );

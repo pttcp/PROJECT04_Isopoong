@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import Header from "./Header";
+import ReviewCard from "./ReviewCard";
+import Footer from "./Footer";
 
 function Review() {
   return (
@@ -22,6 +24,10 @@ function Review() {
           전국 유아 동반 가능 문화시설을 방문하신 분들의 생생한 후기를 볼 수
           있습니다.
         </p>
+
+        <ReviewCard />
+
+        <Footer />
       </section>
     </section>
   );

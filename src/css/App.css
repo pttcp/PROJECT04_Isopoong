@@ -159,7 +159,7 @@ body {
   font-size: 20px;
   color: var(--color-point2);
   font-weight: 400;
-  /* padding: 1rem 0; */
+  padding-bottom: 1rem;
 }
 
 .facility .fac_nav {
@@ -171,6 +171,18 @@ body {
   display: flex;
   justify-content: space-evenly;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.fac_nav .nav-link {
+  color: #5b5b5b;
+  font-size: 20px;
+  border-radius: 1rem;
+  padding: 0.5rem 1.5rem;
+}
+.fac_nav .nav-link.active {
+  color: #000;
+  background-color: #fff;
+  font-weight: 400;
 }
 
 /* KidsTable(표) 영역 */
@@ -203,6 +215,9 @@ body {
 
 .KidsTable .tableset {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .facility_table {
@@ -245,6 +260,22 @@ body {
   top: 0;
   left: 0;
 }
+
+.KidsTable .pagination li {
+  /* border: none; */
+}
+.KidsTable .pagination .page-link {
+  color: var(--color-point2);
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.KidsTable .pagination .page-link.active {
+  /* background-color: white; */
+  /* border-radius: 50%; */
+  /* padding: 0; */
+}
+/* .KidsTable .pagination */
 
 /* Detail 영역 */
 .detail h2 {
@@ -290,6 +321,10 @@ body {
 }
 
 /* Review(이용후기) 영역 */
+.review .hd {
+  background-image: url(/public/img/sec3_bg.jpg);
+}
+
 .review h2 {
   font-size: 3rem;
   color: var(--color-point1);
@@ -297,4 +332,44 @@ body {
 }
 .review h2 strong {
   font-weight: 400;
+}
+.review .sec3 > p {
+  font-size: 20px;
+  color: var(--color-point2);
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
+
+/* ReviewCard 영역 */
+.reviewCard .reviewSlide {
+  border: 1px solid blue;
+  /* width: calc(100% / 4) !important; */
+}
+.rCon {
+  border: 1px solid red;
+}
+
+.rCon img {
+  width: 100%;
+}
+
+/* footer 영역 */
+.ft {
+  background-color: #48a6cd20;
+  color: #868686;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+.ft .ft_logo {
+  /* border: 1px solid red; */
+  width: 108px;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+}
+.ft .ft_logo img {
+  width: 100%;
+  /* background-color: rebeccapurple; */
 }

@@ -7,6 +7,7 @@ import { Pagination } from "react-bootstrap";
 import Header from "./Header";
 import KidsTable from "./KidsTable";
 import Detail from "./Detail";
+import Footer from "./Footer";
 
 function Facility() {
   let dataset = useSelector((state) => state);
@@ -108,6 +109,7 @@ function Facility() {
           <Route path="/Detail/:id" element={<Detail dataset={dataset} />} />
         </Routes> */}
       </section>
+      <Footer />
     </section>
   );
 }
