@@ -26,9 +26,9 @@ function Review() {
         </p>
 
         <ReviewCard />
-
-        <Footer />
       </section>
+
+      <Footer />
     </section>
   );
 }

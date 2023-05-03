@@ -205,6 +205,7 @@ body {
   margin-bottom: 1.5rem;
   background-color: transparent;
   color: var(--color-point2);
+  transition: 0.3s;
 }
 .KidsTable .lnb button:focus,
 .KidsTable .lnb button:hover {
@@ -243,6 +244,7 @@ body {
 
 .facility_table tbody tr {
   position: relative;
+  transition: 0.2s;
 }
 .facility_table tbody tr:hover {
   background-color: #17485c21;
@@ -321,6 +323,9 @@ body {
 }
 
 /* Review(이용후기) 영역 */
+.review {
+  /* height: 100vh; */
+}
 .review .hd {
   background-image: url(/public/img/sec3_bg.jpg);
 }
@@ -341,16 +346,125 @@ body {
 }
 
 /* ReviewCard 영역 */
-.reviewCard .reviewSlide {
-  border: 1px solid blue;
-  /* width: calc(100% / 4) !important; */
+.reviewCard {
+  position: relative;
+  margin: 2rem 0;
 }
-.rCon {
-  border: 1px solid red;
+.reviewCard .slide1 {
+  /* border: 1px solid tomato; */
+  width: 90%;
+  padding: 0.5rem;
+  /* position: relative; */
+  /* overflow: visible !important; */
+  /* margin: 2rem 0; */
 }
 
-.rCon img {
+.reviewCard .reviewSlide {
+  /* border-radius: 1rem;
+  box-shadow: 0 0 10px #00000030;
+  overflow: hidden; */
+  /* border: 2px solid blue; */
+  /* width: calc(100% / 4) !important; */
+  /* width: 300px; */
+  /* height: 450px; */
+}
+.reviewSlide .rCon {
+  border-radius: 1rem;
+  box-shadow: 0 0 8px #00000070;
+  overflow: hidden;
+  /* border: 2px solid hotpink; */
+  /* padding-top: 100%; */
+  position: relative;
+}
+.reviewSlide .rCon > * {
+  padding: 0.5rem 1rem;
+}
+
+.reviewSlide .rCon .rImg {
+  /* border: 1px solid red; */
+  position: relative;
+  padding-top: 100%;
   width: 100%;
+}
+.reviewSlide .rCon .rImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.reviewSlide .rCon .rSite {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  color: var(--color-point2);
+  display: flex;
+  align-items: center;
+}
+.reviewSlide .rCon .rSite span:first-of-type {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reviewSlide .rCon .rSite span:last-of-type {
+  padding-left: 1rem;
+  color: rgb(243, 228, 16);
+}
+
+.reviewSlide .rCon .rTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.reviewSlide .rCon .rName {
+  font-size: 14px;
+  padding-bottom: 1rem;
+}
+
+.reviewSlide .rCon > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #00000050;
+  width: 100%;
+  height: 100%;
+}
+
+.reviewCard .next1,
+.reviewCard .prev1 {
+  color: var(--color-point2);
+  border: 1px solid transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.reviewCard .next1:hover,
+.reviewCard .prev1:hover {
+  border: 25px solid #a463ae90;
+  /* border: 25px solid var(--color-point2); */
+  background-color: #a463ae90;
+  /* background-color: var(--color-point2); */
+}
+
+.reviewCard .next1::after,
+.reviewCard .prev1::after {
+  /* border: 1px solid red; */
+  font-family: "Font Awesome 6 Free";
+  font-size: 2rem;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.reviewCard .next1::after {
+  content: "\f054";
+}
+.reviewCard .prev1::after {
+  content: "\f053";
+}
+.reviewCard .next1:hover::after,
+.reviewCard .prev1:hover::after {
+  color: white;
 }
 
 /* footer 영역 */
@@ -361,7 +475,10 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  /* position: fixed;
+  bottom: 0;
+  width: 100%; */
 }
 .ft .ft_logo {
   /* border: 1px solid red; */
