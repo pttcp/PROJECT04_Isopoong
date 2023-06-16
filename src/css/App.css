@@ -1,13 +1,5 @@
 @charset "utf-8";
 
-/* @font-face {
-  font-family: "TheJamsil";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2")
-    format("woff2");
-  font-weight: 700;
-  font-style: normal;
-} */
-
 :root {
   --mw1: 1440px;
   --mw2: 1200px;
@@ -141,6 +133,11 @@ body {
   padding: 1rem 0.5rem;
   color: white;
   font-size: 1.5rem;
+  transition: 0.3s;
+}
+.breadcrumb > a:hover {
+  color: var(--color-btn2);
+  /* color: white; */
 }
 .breadcrumb > a:last-of-type {
   font-weight: 400;
@@ -178,6 +175,10 @@ body {
   font-size: 20px;
   border-radius: 1rem;
   padding: 0.5rem 1.5rem;
+}
+.fac_nav .nav-link:hover {
+  color: #000;
+  font-weight: 400;
 }
 .fac_nav .nav-link.active {
   color: #000;
@@ -221,12 +222,12 @@ body {
   align-items: center;
 }
 
-.facility_table {
+.commonTable {
   /* border: 1px solid hotpink; */
   width: 100%;
   margin-bottom: 1rem;
 }
-.facility_table th {
+.commonTable th {
   /* border: 1px solid yellow; */
   max-width: 180px;
   padding: 1rem;
@@ -237,24 +238,24 @@ body {
   border-bottom: 1px solid var(--color-point2);
   /* margin: 1rem 0; */
 }
-.facility_table th:nth-of-type(3) {
+.commonTable th:nth-of-type(3) {
   /* background-color: aqua; */
   width: calc(100% - 720px);
 }
 
-.facility_table tbody tr {
+.commonTable tbody tr {
   position: relative;
   transition: 0.2s;
 }
-.facility_table tbody tr:hover {
+.commonTable tbody tr:hover {
   background-color: #17485c21;
 }
-.facility_table td {
+.commonTable td {
   padding: 0.5rem;
   text-align: center;
   border-bottom: 1px solid #d9d9d9;
 }
-.facility_table .fac_name a {
+.commonTable .fac_name a {
   /* background-color: rgba(153, 205, 50, 0.13); */
   position: absolute;
   width: 100%;
@@ -272,14 +273,25 @@ body {
   background-color: transparent;
   outline: none;
 }
-.KidsTable .pagination .page-link.active {
-  /* background-color: white; */
-  /* border-radius: 50%; */
-  /* padding: 0; */
+.KidsTable .pagination .page-link:focus {
+  box-shadow: none;
+  /* color: red; */
 }
-/* .KidsTable .pagination */
+.KidsTable .pagination .page-link.active {
+  color: #db6dc3;
+  font-weight: 500;
+}
 
 /* Detail 영역 */
+.detail .beforePage {
+  display: inline-block;
+  margin: 2rem 0;
+  color: #6a6a6a;
+}
+.detail .beforePage > i {
+  padding-right: 0.5rem;
+}
+
 .detail h2 {
   font-size: 3rem;
   color: var(--color-point1);
@@ -292,6 +304,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 2rem 0;
+  margin-bottom: 3rem;
 }
 .detail .place > * {
   /* border: 1px solid blue; */
@@ -320,6 +333,15 @@ body {
   /* border: 1px solid lightgreen; */
   width: 30%;
   font-weight: 400;
+}
+
+.detail h3 {
+  font-weight: 500;
+  color: var(--color-point2);
+  font-size: 2rem;
+}
+.similar_table {
+  margin: 2rem 0 5rem;
 }
 
 /* Review(이용후기) 영역 */
@@ -375,6 +397,7 @@ body {
   /* border: 2px solid hotpink; */
   /* padding-top: 100%; */
   position: relative;
+  cursor: pointer;
 }
 .reviewSlide .rCon > * {
   padding: 0.5rem 1rem;
@@ -467,6 +490,70 @@ body {
   color: white;
 }
 
+/* Modal 영역 */
+.modal-dialog {
+  max-width: 1000px;
+  font-family: "TheJamsil";
+  font-weight: 300;
+}
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 10px #d9d9d9;
+}
+.modal-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  border: none;
+}
+.modal-body {
+  padding: 0;
+  display: flex;
+}
+.modal-body .modal_img {
+  width: 50%;
+  height: 500px;
+}
+.modal-body .modal_img img {
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal_detail {
+  width: 50%;
+  padding: 3rem 2rem;
+}
+.modal_detail > * {
+  padding: 0.75rem 0;
+}
+.modal_detail > div > span:first-of-type {
+  color: var(--color-point2);
+  font-weight: 400;
+}
+.modal_detail > div > span:last-of-type {
+  padding-left: 1rem;
+  color: rgb(243, 228, 16);
+}
+
+.modal_detail > p:first-of-type {
+  font-size: 20px;
+  font-weight: 400;
+}
+.modal_detail > p:last-of-type {
+  line-height: 1.6rem;
+}
+
 /* footer 영역 */
 .ft {
   background-color: #48a6cd20;
@@ -475,7 +562,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
-  margin-top: 4rem;
+  margin-top: 5rem;
   /* position: fixed;
   bottom: 0;
   width: 100%; */

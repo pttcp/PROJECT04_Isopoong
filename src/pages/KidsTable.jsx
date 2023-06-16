@@ -74,7 +74,7 @@ function KidsTable({ local, tab }) {
         </button>
       </nav>
       <div className="tableset">
-        <table className="facility_table">
+        <table className="commonTable facility_table">
           <thead>
             <tr>
               <th>지역</th>

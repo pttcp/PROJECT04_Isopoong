@@ -104,10 +104,6 @@ function Facility() {
         </Nav>
 
         <TabContents tab={tab} dataset={dataset} />
-
-        {/* <Routes>
-          <Route path="/Detail/:id" element={<Detail dataset={dataset} />} />
-        </Routes> */}
       </section>
       <Footer />
     </section>
