@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/PROJECT04_Isopoong/static/css/main.6f20a1e8.css",
-    "main.js": "/PROJECT04_Isopoong/static/js/main.28cdc22b.js",
+    "main.css": "/PROJECT04_Isopoong/static/css/main.cf6380cc.css",
+    "main.js": "/PROJECT04_Isopoong/static/js/main.41a36e17.js",
     "static/js/787.f9aed9e6.chunk.js": "/PROJECT04_Isopoong/static/js/787.f9aed9e6.chunk.js",
     "static/media/sec2_bg.jpg": "/PROJECT04_Isopoong/static/media/sec2_bg.8c9abff2a4281f53bbd1.jpg",
     "static/media/sec3_bg.jpg": "/PROJECT04_Isopoong/static/media/sec3_bg.c5ed9fd285a343a16ada.jpg",
     "index.html": "/PROJECT04_Isopoong/index.html",
-    "main.6f20a1e8.css.map": "/PROJECT04_Isopoong/static/css/main.6f20a1e8.css.map",
-    "main.28cdc22b.js.map": "/PROJECT04_Isopoong/static/js/main.28cdc22b.js.map",
+    "main.cf6380cc.css.map": "/PROJECT04_Isopoong/static/css/main.cf6380cc.css.map",
+    "main.41a36e17.js.map": "/PROJECT04_Isopoong/static/js/main.41a36e17.js.map",
     "787.f9aed9e6.chunk.js.map": "/PROJECT04_Isopoong/static/js/787.f9aed9e6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6f20a1e8.css",
-    "static/js/main.28cdc22b.js"
+    "static/css/main.cf6380cc.css",
+    "static/js/main.41a36e17.js"
   ]
 }
