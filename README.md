@@ -1,4 +1,4 @@
-# PROJECT_아이소풍 👶
+# PROJECT_아이소풍 👪
 
 ### 1. [Demo](https://shlee733.github.io/PROJECT04_Isopoong/)
 ![isopoong](https://github.com/shlee733/PROJECT04_Isopoong/assets/124757654/ae469fdc-a118-44f1-b721-9c6aa74e0902)
